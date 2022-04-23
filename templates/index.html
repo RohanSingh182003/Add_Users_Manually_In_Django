@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: auto;
+            text-align: center;
+            position: relative;
+        }
+        h1{
+            font-size: 3rem;
+            margin-top: 60px;
+        }
+        p{
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 1.5rem;
+        }
+        form{
+            width: 100%;
+            min-width: 200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            font-size: 1.2rem;
+            width: 250px;
+            min-width: 200px;
+            height: auto;
+            padding: 10px 15px;
+            border-radius: 6px;
+            position: absolute;
+            text-align: center;
+        }
+        #first{
+            margin-top: 60px;
+        }
+        #last{
+            margin-top: 140px;
+        }
+        #submit{
+            margin-top: 160px;
+            color: green;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+        #submit:hover{
+            background-color: green;
+            color: azure;
+        }
+        .btn{
+            margin: 10px auto;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .btn:hover{
+            font-weight: bolder;
+        }
+        a{
+            text-decoration: none;
+            padding:15px;
+        }
+        a:hover{
+            color: azure;
+            padding: 5px 14px;
+        }
+        #edit{
+            color: blue;
+            font-weight: bold;
+        }
+        #edit:hover{
+            background-color: blue;
+            font-weight: bolder;
+        }
+        
+    </style>
+    <title>Add Users</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Users</h1>
+         <p style="color: green;">{{success}}</p> <!--if the form is successfully submitted -->
+        <p style="color: red;">{{reject}}</p> <!--if the user is already exist -->
+        <form action="/" method="POST">
+            {% csrf_token %} 
+            <input type="text" name="username" id="first" placeholder="Enter Username"> <br> <br>
+            <input type="password" name="password" id="last" placeholder="Enter Password"> <br> <br>
+            <button type="submit" class="btn" id="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
